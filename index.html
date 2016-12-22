@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>14islands Aeronaut - WebVR experience</title>
+
+		<meta name="description" content="Low polygon Aeronaut experience for Vive or Cardboard using webVR and THREE.js - a 14islands hack" />
+		<meta name="keywords" content="three.js, webgl, webvr, vive, cardboard, oculus rift, 3d, animation, airplane, web development, javascript" />
+		<meta name="author" content="David Lindkvist for 14islands" />
+
+		<link rel="stylesheet" type="text/css" href="build/bundle.min.css" />
+
+
+    <script>
+      /**
+       * webvr-polyfill configuration
+       */
+      WebVRConfig = {
+        // Forces availability of VR mode.
+        // FORCE_ENABLE_VR: false, // Default: false.
+        // Complementary filter coefficient. 0 for accelerometer, 1 for gyro.
+        // K_FILTER: 0.98, // Default: 0.98.
+        // How far into the future to predict during fast motion.
+        // PREDICTION_TIME_S: 0.040, // Default: 0.040 (in seconds).
+        // Flag to disable touch panner. In case you have your own touch controls
+        // TOUCH_PANNER_DISABLED: true, // Default: false.
+        // Enable yaw panning only, disabling roll and pitch. This can be useful for
+        // panoramas with nothing interesting above or below.
+        // YAW_ONLY: false, // Default: false.
+        // Enable the deprecated version of the API (navigator.getVRDevices).
+        // ENABLE_DEPRECATED_API: false, // Default: false.
+        // Scales the recommended buffer size reported by WebVR, which can improve
+        // performance. Making this very small can lower the effective resolution of
+        // your scene.
+        BUFFER_SCALE: 1, // default: 1.0
+        // Allow VRDisplay.submitFrame to change gl bindings, which is more
+        // efficient if the application code will re-bind it's resources on the
+        // next frame anyway.
+        // Dirty bindings include: gl.FRAMEBUFFER_BINDING, gl.CURRENT_PROGRAM,
+        // gl.ARRAY_BUFFER_BINDING, gl.ELEMENT_ARRAY_BUFFER_BINDING,
+        // and gl.TEXTURE_BINDING_2D for texture unit 0
+        // Warning: enabling this might lead to rendering issues.
+        // DIRTY_SUBMIT_FRAME_BINDINGS: false // default: false
+      }
+    </script>
+
+    <!-- three.js 3d library - needs to be global for third party plugins -->
+    <script src="node_modules/three/build/three.js"></script>
+
+    <!-- A polyfill for WebVR using the Device{Motion,Orientation}Event API. -->
+    <script src="node_modules/webvr-polyfill/build/webvr-polyfill.js"></script>
+
+    <!-- Helps enter and exit VR mode, provides best practices while in VR. -->
+    <script src="node_modules/webvr-boilerplate/build/webvr-manager.js"></script>
+
+    <!-- Our compiled scene -->
+		<script type="text/javascript" src="build/bundle.min.js"/></script>
+
+	</head>
+	<body>
+		<div class="world" id="world"></div>
+	</body>
+</html>
