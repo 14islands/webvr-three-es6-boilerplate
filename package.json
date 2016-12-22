@@ -1,7 +1,7 @@
 {
-  "name": "AviatorHack",
+  "name": "webvr-three-es6-boilerplate",
   "version": "1.0.0",
-  "description": "Game hack",
+  "description": "A boilerplate setup for WebVR projects using three.js and ES6 JavaScript. Uses webvr-boilerplate & webvr-polyfill npm modules.",
   "main": "./src/js/main.js",
   "scripts": {
     "start": "npm-run-all --parallel watch browser-sync",
@@ -16,7 +16,7 @@
     "postinstall": "npm run build"
   },
   "engines": {
-    "node": "6.0.0"
+    "node": "6.5.0"
   },
   "keywords": [],
   "author": "",
